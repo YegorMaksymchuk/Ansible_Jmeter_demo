@@ -1,0 +1,9 @@
+---
+- hosts: jmeter
+  become: yes
+  tasks:
+
+  - name: Read-write git checkout from github
+    ansible.builtin.git:
+      repo: 
+      dest: /home/ubuntu/pefr_test

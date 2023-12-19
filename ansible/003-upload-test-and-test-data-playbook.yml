@@ -1,0 +1,14 @@
+---
+- hosts: jmeter
+  become: yes
+  tasks:
+
+    - name: Copy JMX projects to VM
+      ansible.builtin.copy:
+        src: ./../tests/*.jmx
+        dest: /home/ubuntu/tests/
+
+    - name: Copy test data to executors
+      ansible.builtin.copy:
+        src: ./../data/queries.csv
+        dest: /home/ubuntu/data/queries.csv  
