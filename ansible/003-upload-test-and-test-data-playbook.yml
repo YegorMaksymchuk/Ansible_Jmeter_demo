@@ -3,12 +3,26 @@
   become: yes
   tasks:
 
-    - name: Copy JMX projects to VM
+    - name: Copy Google JMX projects to VM
       ansible.builtin.copy:
-        src: ./../tests/*.jmx
+        src: ./../tests/google.jmx
         dest: /home/ubuntu/tests/
+
+    - name: Copy Duck-Go-Go JMX projects to VM
+      ansible.builtin.copy:
+        src: ./../tests/duck-go-go.jmx
+        dest: /home/ubuntu/tests/    
 
     - name: Copy test data to executors
       ansible.builtin.copy:
         src: ./../data/queries.csv
-        dest: /home/ubuntu/data/queries.csv  
+        dest: /home/ubuntu/data/  
+
+    - name: Copy run script
+      ansible.builtin.copy:
+        src: ./../runTest.sh
+        dest: /home/ubuntu/
+    
+    - name: Create to report directory
+      ansible.builtin.shell: mkdir report
+      
