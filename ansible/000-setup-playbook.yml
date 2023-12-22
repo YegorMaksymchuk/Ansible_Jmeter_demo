@@ -1,2 +1,4 @@
 ---
-- 001-prepare-ubuntu-playbook.yml
+- import_playbook: 001-prepare-ubuntu-playbook.yml
+- import_playbook: 002-install-jmeter-playbook.yml
+- import_playbook: 003-upload-test-and-test-data-playbook.yml

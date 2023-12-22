@@ -3,8 +3,8 @@
   become: yes
   tasks:
 
-- name: Just ensuring the repo checkout exists
-  ansible.builtin.git:
-    repo: ''
-    dest: /home/ubuntu/
-    clone: yes
+    - name: Just ensuring the repo checkout exists
+      ansible.builtin.git:
+        repo: 'https://github.com/YegorMaksymchuk/Ansible_Jmeter_demo.git'
+        dest: /home/ubuntu/tmp_for_demo
+        clone: yes
