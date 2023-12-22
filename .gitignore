@@ -1,0 +1,9 @@
+*.log
+*.tgz
+jmeter/**
+jmeter/*
+jmeter
+.vscode/**
+.vscode/*
+.vscode
+*.pem
